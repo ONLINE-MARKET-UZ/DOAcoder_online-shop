@@ -1,8 +1,12 @@
+import Header from "./components/Header"
+import Layout from "./components/Layout"
+
 
 const App = () => {
   return (
     <div>
-      <h1>React starter</h1>
+      <Header/>
+      <Layout/>
     </div>
   );
 };

@@ -1,0 +1,30 @@
+.order-form {
+  margin-bottom: 40px;
+  
+  &__wrapper {
+    height: 448px;
+    padding: 35px 40px;
+    background-image: url("../../assets/images/bgImage.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: calc(50% - 33px) calc(50% - 0px) !important;
+
+    .box{
+      padding:22px 31px 25px 20px !important;
+    .text-aria {
+      & ::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    .input {
+      &::placeholder {
+        color: #1c1c1c;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    }
+
+  }
+}
