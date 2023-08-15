@@ -1,6 +1,8 @@
 import Intro from "../Intro"
 import Offers from "../Offers"
 import OrderForm from "../OrderForm"
+import Products from "../Products"
+
 
 const index = () => {
     return (
@@ -8,6 +10,8 @@ const index = () => {
         <Intro />
         <Offers/>
         <OrderForm/>
+        <Products/>
+       
       </main>
     );
 };

@@ -1,118 +1,57 @@
-import menu from "../../assets/images/menu.svg"
-import flag from "../../assets/images/icon.png"
-import {Select} from "antd";
-import "./style.scss"
-
-const onChange = (value) => {
-  console.log(`selected ${value}`);
-};
-const onSearch = (value) => {
-  console.log("search:", value);
-};
-
-
+import menu from "../../assets/images/menu.svg";
+import flag from "../../assets/images/icon.png";
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar flex items-center justify-between py-[17px] mt-[20px]">
-        <ul className="flex items-center gap-[28px]">
-          <li>
-            <img src={menu} alt="menu" />
-          </li>
-          <li>
-            <p className="text-[16px] font-medium">All category</p>
-          </li>
-          <li>
-            <p className="text-[16px] font-medium">Hot offers</p>
-          </li>
-          <li>
-            <p className="text-[16px] font-medium">Gift boxes</p>
-          </li>
-          <li>
-            <p className="text-[16px] font-medium">Projects</p>
-          </li>
-          <li>
-            <p className="text-[16px] font-medium">Menu item</p>
-          </li>
-          <li>
-            <Select
-              className="select"
-              bordered={false}
-              placeholder="Help"
-              optionFilterProp="children"
-              onChange={onChange}
-              onSearch={onSearch}
-              filterOption={(input, option) =>
-                (option?.label ?? "")
-                  .toLowerCase()
-                  .includes(input.toLowerCase())
-              }
-              options={[
-                {
-                  value: "about us",
-                  label: "about us",
-                },
-                {
-                  value: "contact",
-                  label: "contact",
-                },
-              ]}
-            />
-          </li>
-        </ul>
-        <ul className="flex items-center gap-[32px]">
-          <li>
-            <Select
-              // className='border border-blue-500'
-              bordered={false}
-              placeholder="English,USD"
-              optionFilterProp="children"
-              onChange={onChange}
-              onSearch={onSearch}
-              filterOption={(input, option) =>
-                (option?.label ?? "")
-                  .toLowerCase()
-                  .includes(input.toLowerCase())
-              }
-              options={[
-                {
-                  value: "English, USD",
-                  label: "English, USD",
-                },
-                {
-                  value: "Russian, RUBL",
-                  label: "Russian, RUBL",
-                },
-              ]}
-            />
-          </li>
-          <li>
-            <Select
-              // className='border border-blue-500'
-              bordered={false}
-              placeholder="Ship to"
-              optionFilterProp="children"
-              onChange={onChange}
-              onSearch={onSearch}
-              filterOption={(input, option) =>
-                (option?.label ?? "")
-                  .toLowerCase()
-                  .includes(input.toLowerCase())
-              }
-              options={[
-                {
-                  value: "england",
-                  label: "england",
-                },
-                {
-                  value: "russia",
-                  label: "russia",
-                },
-              ]}
-            />
-          </li>
-        </ul>
-      </nav>
+    <div className="h-[56px] flex items-center justify-between">
+      <ul className="flex gap-x-[28px] tetx-[16px] font-medium">
+        <li>
+          <a href="#" className="flex gap-x-[6px]">
+            <img src={menu} alt="menu" /> All cetegory
+          </a>
+        </li>
+        <li>
+          <a href="#">Hot offers</a>
+        </li>
+        <li>
+          <a href="#">Gift boxes</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+        <li>
+          <a href="#">Menu item</a>
+        </li>
+        <li>
+          <select className="outline-none w-[60px]">
+            <option value="Help" disabled selected>
+              Help
+            </option>
+            <option value="About">About</option>
+            <option value="Contact">Contact</option>
+            <option value="Connection">Connection</option>
+          </select>
+        </li>
+      </ul>
+      <ul className="flex gap-x-[32px]">
+        <li>
+          <select className="outline-none font-medium text-[16px]">
+            <option value="English, USD" disabled selected>
+              English, USD
+            </option>
+            <option value="Russia, RUBL">Russia, RUBL</option>
+            <option value="UZB, SUM">Uzb, SUM</option>
+          </select>
+        </li>
+        <li>
+          <select className="outline-none font-medium text-[16px]">
+            <option value="Ship to" disabled selected>
+              Ship to <img src={flag} alt="flag" />
+            </option>
+            <option>Ship to</option>
+            <option>Ship to</option>
+          </select>
+        </li>
+      </ul>
     </div>
   );
 };

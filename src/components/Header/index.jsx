@@ -1,13 +1,16 @@
+import "./style.scss";
+
 import HeaderTop from "./HeaderTop";
 import Navbar from "./Navbar";
+import ResHeader from "./ResHeader"
 
-import "./style.scss";
 const index = () => {
   return (
     <header>
-      <div className="container mx-auto p-5">
+      <div className="container">
         <HeaderTop />
         <Navbar />
+        <ResHeader/>
       </div>
     </header>
   );

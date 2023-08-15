@@ -1,108 +1,55 @@
-import React from 'react';
-import Logo from "../../assets/images/logo.svg";
-import User from "../../assets/images/user.svg";
-import Message from "../../assets/images/message.svg";
-import Likely from "../../assets/images/heart.svg";
-import Cart from "../../assets/images/karzina.svg";
-import { Input, Select,Button } from "antd";
+import logo from "../../assets/images/logo.svg";
+import user from "../../assets/images/user.svg"
+import message from "../../assets/images/message.svg"
+import orders from "../../assets/images/heart.svg"
+import cart from "../../assets/images/karzina.svg"
 
 
-const onChange = (value) => {
-  console.log(`selected ${value}`);
-};
-const onSearch = (value) => {
-  console.log("search:", value);
-};
-
-
+import { Input, Select, Button } from "antd";
 
 const HeaderTop = () => {
   return (
-    <div>
-      <ul className="flex items-center justify-between h-[86px] pt-[22px] pb-[24px]">
-        <li>
-          <img src={Logo} alt="" />
+    <div className="h-[86px] flex items-center justify-between">
+      <a href="">
+        <img src={logo} alt="#" />
+      </a>
+      <div className="flex border border-blue-500 rounded-md">
+        <Input
+          className="w-[406px] text-[16px] rounded-l-md rounded-none outline-none border-none"
+          placeholder="Search"
+        />
+        <select className="outline-none text-[16px] border border-l-blue-500">
+          <option value="All category" selected disabled>
+            All category
+          </option>
+          <option value="Automobiles">Automobiles</option>
+          <option value="Clothes and wear">Clothes and wear</option>
+          <option value="Home interiors">Home interiors</option>
+        </select>
+        <Button
+          default
+          className="text-[16px] h-[40px] bg-blue-500 text-white border-none rounded-none rounded-r-md"
+        >
+          Search
+        </Button>
+      </div>
+
+      <ul className="flex items-center gap-x-[23px] text-[#8B96A5] text-[12px]">
+        <li className="flex flex-col justify-between h-[41px]">
+          <img className="self-center" src={user} alt="user" />
+          Profile
         </li>
-        <li>
-          <div className="flex items-center border border-blue-500 rounded-md overflow-hidden">
-            <Input
-              className=" rounded-none border border-blue-500 w-[421px] h-[45px] pl-[10px] pr-[5px] text-[16px] font-normal"
-              placeholder="Search"
-            />
-            <Select
-              // className='border border-blue-500'
-              bordered={false}
-              placeholder="All Category"
-              optionFilterProp="children"
-              onChange={onChange}
-              onSearch={onSearch}
-              filterOption={(input, option) =>
-                (option?.label ?? "")
-                  .toLowerCase()
-                  .includes(input.toLowerCase())
-              }
-              options={[
-                {
-                  value: "Automobiles",
-                  label: "Automobiles",
-                },
-                {
-                  value: "Clothes and wear",
-                  label: "Clothes and wear",
-                },
-                {
-                  value: "Home interiors",
-                  label: "Home interiors",
-                },
-                {
-                  value: "Computer and tech",
-                  label: "Computer and tech",
-                },
-                {
-                  value: "Tools, equipments",
-                  label: "Tools, equipments",
-                },
-                {
-                  value: "Sports and outdoor",
-                  label: "Sports and outdoor",
-                },
-                {
-                  value: "Animal and pets",
-                  label: "Animal and pets",
-                },
-                {
-                  value: "Machinery tools",
-                  label: "Machinery tools",
-                },
-              ]}
-            />
-            <Button
-              default
-              className=" bg-blue-500 text-white border-none rounded-none h-[45px] px-[23px]"
-            >
-              Search
-            </Button>
-          </div>
+        <li className="flex flex-col justify-between h-[41px]">
+          <img className="self-center" src={message} alt="message" />
+          Message
         </li>
-        <li>
-          <ul className="flex items-center gap-4">
-            <li className="flex flex-col justify-end items-center h-[44px] gap-2 ">
-              <img src={User} alt="User" />
-              <p className="text-[12px] font-normal text-[#8B96A5]">Profile</p>
-            </li>
-            <li className="flex flex-col justify-end items-center h-[44px] gap-2 ">
-              <img src={Message} alt="Message" />
-              <p className="text-[12px] font-normal text-[#8B96A5]">Message</p>
-            </li>
-            <li className="flex flex-col justify-end items-center h-[44px] gap-2 ">
-              <img src={Likely} alt="Likely" />
-              <p className="text-[12px] font-normal text-[#8B96A5]">Orders</p>
-            </li>
-            <li className="flex flex-col justify-end items-center h-[44px] gap-2 ">
-              <img src={Cart} alt="Cart" />
-              <p className="text-[12px] font-normal text-[#8B96A5]">My cart</p>
-            </li>
-          </ul>
+        <li className="flex flex-col justify-between h-[41px]">
+          <img className="self-center" src={orders} alt="orders" />
+          Orders
+        </li>
+        <li className="flex flex-col justify-between h-[41px]">
+          <img className="self-center" src={cart} alt="cart" />
+          My cart
         </li>
       </ul>
     </div>
